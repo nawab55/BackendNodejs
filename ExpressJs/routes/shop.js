@@ -1,0 +1,11 @@
+const express = require('express');
+const router = express.Router();
+
+
+router.use("/", (req, res, next) => {
+    // console.log('In another middleware');
+    // res.setHeader("Cache-Control", "no-store");
+    res.send("<h1>Hello from Express!</h1>");
+});
+
+module.exports = router;
