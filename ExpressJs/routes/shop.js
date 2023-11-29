@@ -1,11 +1,10 @@
 const express = require('express');
+const path = require('path');
 const router = express.Router();
+const rootDir = require('../util/path');
 
-
-router.use("/", (req, res, next) => {
-    // console.log('In another middleware');
-    // res.setHeader("Cache-Control", "no-store");
-    res.send("<h1>Hello from Express!</h1>");
+router.get("/", (req, res, next) => {
+   res.sendFile(path.join(rootDir, 'views', 'shop.html'));
 });
 
 module.exports = router;
